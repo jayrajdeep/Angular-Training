@@ -1,13 +1,13 @@
-export class Customer  {
-    constructor(public  firstName:string,
-                public  lastName:string,
-                public  email:string,
-                public  phoneNo:number,
-                public  age:number,
-                public  birthDate:Date,
-                public location:string,
-                public memberShip:string,
-                public isRegistered:boolean,
-                public socialStatus:string[]){      
-     }
+export interface Customer {
+  firstName: string;
+  lastName?: string;
+  email: string;
+  password: string;
+  birthDate: string;
+  age: number;
+  phoneNo: string;
+  location: string;
+  memberShip: string;
+  isRegistered?: boolean;
+  social?: string[];
 }

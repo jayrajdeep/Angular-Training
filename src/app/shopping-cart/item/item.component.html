@@ -1,1 +1,10 @@
-<p>item works!</p>
+<div class="card m-2" style="width: 180px;">
+  <img [src]="item.imageUrl" class="card-img-top" alt="{{ item.title }}">
+  <div class="card-body text-center">
+    <h5 class="card-title">{{ item.title }}</h5>
+    <p class="card-text">₹ {{ item.price }}</p>
+    <button class="btn btn-primary btn-sm" (click)="addToCart()">
+      Add to Cart
+    </button>
+  </div>
+</div>

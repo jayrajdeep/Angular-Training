@@ -1,15 +1,22 @@
+import { Component, Input } from '@angular/core';
+import { Item } from '../models/Item';
+import { CartService } from '../cart.service';
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
-import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-item',
   standalone: true,
-  imports: [CommonModule, FormsModule]
-  ,
+  imports: [CommonModule],
   templateUrl: './item.component.html',
-  styleUrl: './item.component.css'
+  styleUrls: ['./item.component.css']
 })
 export class ItemComponent {
+  @Input() item!: Item;
 
+  constructor(private cartService: CartService) {}
+
+  addToCart() {
+    this.cartService.addToCart(this.item);
+    alert(`${this.item.title} added to cart!`);
+  }
 }

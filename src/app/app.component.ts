@@ -4,6 +4,7 @@ import { CatalogModule } from './catalog/catalog.module';
 import { CommonModule } from '@angular/common';
 import { MembershipModule } from './membership/membership.module';
 import { ShoppingCartModule } from './shopping-cart/shopping-cart.module';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-root',

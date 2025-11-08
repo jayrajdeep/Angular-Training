@@ -1,24 +1,22 @@
-<div >
-  <h1>Login</h1>
+<h2>Sign In</h2>
 
-   <div >   
-       <form >
-        <table>
-              <tr>
-                <td><label>Email:</label></td>
-                <td> 
-                  <input type="email" name="userEmail" 
-                         required  pattern="^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$" />
-              </tr>
-              <tr>
-                <td><label>Password:</label></td>
-                <input type="password" name="userPassword" required />
-              
-              </tr>   
-              <tr>
-                  <td><button type="submit" > Submit</button> </td>
-              </tr>
-        </table>
-    </form>
-    </div>
-</div>
+<form #signinForm="ngForm" (ngSubmit)="onLogin(signinForm.value)">
+  <table>
+    <tr>
+      <td><label>Email:</label></td>
+      <td><input type="email" name="email" ngModel required /></td>
+    </tr>
+    <tr>
+      <td><label>Password:</label></td>
+      <td><input type="password" name="password" ngModel required /></td>
+    </tr>
+    <tr>
+      <td colspan="2" style="text-align:center;">
+        <button type="submit" [disabled]="signinForm.invalid">Login</button>
+      </td>
+    </tr>
+  </table>
+</form>
+
+<p class="error" *ngIf="errorMessage">{{ errorMessage }}</p>
+<p class="success" *ngIf="successMessage">{{ successMessage }}</p>
